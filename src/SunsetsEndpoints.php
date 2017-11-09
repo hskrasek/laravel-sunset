@@ -15,7 +15,7 @@ trait SunsetsEndpoints
      *
      * @return Response
      */
-    public function sunsetResponse(Response $response, $date, ?string $link = null): Response
+    public function sunsetResponse(Response $response, $date, string $link = null): Response
     {
         return tap($response, function (Response $response) use ($date, $link) {
             $response->headers->set('Sunset', $this->normalizeDate($date));
